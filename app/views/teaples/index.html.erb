@@ -3,7 +3,10 @@
 <% if Teaple.all.any? %>
   <ul>
   <% Teaple.all.each do |teaple|%>
-    <li><%= teaple.name %></li>
+    <li>
+    <%= teaple.name %>
+    <%= link_to "Arrange meeting", teaple_path(teaple) %>
+    </li>
   <%  end %>
   </ul>
 <% else %>

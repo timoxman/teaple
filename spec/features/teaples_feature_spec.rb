@@ -1,5 +1,8 @@
 require 'rails_helper'
 
+require_relative 'helpers'
+include Helpers
+
 feature 'teaples' do
   context 'have not been added' do
     scenario 'display a message' do

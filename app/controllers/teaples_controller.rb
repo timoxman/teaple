@@ -17,4 +17,8 @@ class TeaplesController < ApplicationController
     params.require(:teaple).permit(:name)
   end
 
+  def show
+
+  end
+
 end
