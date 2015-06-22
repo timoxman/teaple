@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   get 'teaples' => 'teaples#index'
 
-  resources :teaples
+  resources :teaples do
+    resources :messages
+  end
 
   # You can have the root of your site routed with "root"
   root 'teaples#index'

@@ -33,6 +33,7 @@ feature 'teaple' do
       add_teaple
       click_link "Arrange meeting"
       fill_in "Message", with: "Please meet me"
+      click_button 'Arrange Meeting'
       expect(page).to have_content("Please meet me")
     end
 

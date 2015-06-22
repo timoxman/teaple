@@ -5,7 +5,7 @@
   <% Teaple.all.each do |teaple|%>
     <li>
     <%= teaple.name %>
-    <%= link_to "Arrange meeting", teaple_path(teaple) %>
+    <%= link_to "Arrange meeting", new_teaple_message_path(teaple) %>
     </li>
   <%  end %>
   </ul>
