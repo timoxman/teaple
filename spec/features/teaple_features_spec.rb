@@ -15,6 +15,7 @@ feature 'teaple' do
       fill_in 'Name', with: "Betty"
       click_button 'Save profile'
       expect(page).to have_content 'Thanks for signing up, Betty!'
+      # expect(page).not_to have_link 'Add your profile'
       expect(current_path).to eq '/'
     end
   end
