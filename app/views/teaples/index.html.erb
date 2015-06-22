@@ -1,0 +1,13 @@
+<section id="wrapper">
+
+<% if Teaple.all.any? %>
+  <ul>
+  <% Teaple.all.each do |teaple|%>
+    <li><%= teaple.name %></li>
+  <%  end %>
+  </ul>
+<% else %>
+  <h2>No teaples added yet</h2>
+<% end %>
+
+</section>
