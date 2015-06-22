@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   get 'teaples' => 'teaples#index'
 
   resources :teaples
+
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'teaples#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
