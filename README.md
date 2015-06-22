@@ -13,22 +13,26 @@ Teaples is a service that matches up older people, who could use a visit and a c
 
 ## User Stories
 
-```As a would-be visitor
+```
+As a would-be visitor
 so that i can find someone to have tea with
 i’d like to see a list of available teaples
 ```
 
-```As an old person (or ‘teaple’)
+```
+As an old person (or ‘teaple’)
 so that I can get visits
 I want to be able to put my details on the site
 ```
 
-```As a would-be visitor
+```
+As a would-be visitor
 So that I can visit a teaple
 I want to initiate a conversation with a selected teaple
 ```
 
-```As a user of the site
+```
+As a user of the site
 So that I can use the application
 I want to sign up and log in as a teaple or volunteer
 ```
