@@ -19,4 +19,18 @@ feature 'teaple' do
       expect(current_path).to eq '/'
     end
   end
+
+  context 'viewing teaple' do
+    let!(:betty){Teaple.create(name:"Betty")}
+
+    scenario 'lets a volunteer view a teaple profile' do
+      visit '/'
+      click_link 'Betty'
+      expect(page).to have_content 'Betty'
+      expect(current_path).to eq "/teaples/#{betty.id}"
+    end
+
+  end
+
+
 end

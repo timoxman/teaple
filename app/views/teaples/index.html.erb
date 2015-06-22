@@ -1,9 +1,10 @@
 <section id="main">
 
-<% if Teaple.all.any? %>
+<% if @teaples.any? %>
   <ul>
-  <% Teaple.all.each do |teaple|%>
-    <li><%= teaple.name %></li>
+  <% @teaples.each do |teaple|%>
+    <li><%= link_to teaple.name, teaple_path(teaple) %></li>
+
   <%  end %>
   </ul>
 <% else %>
@@ -11,6 +12,7 @@
 <% end %>
 
 <%= link_to "Add your profile", new_teaple_path %>
+
 
 <% if user_signed_in? %>
   <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
