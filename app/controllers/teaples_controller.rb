@@ -1,11 +1,16 @@
 class TeaplesController < ApplicationController
 
   def index
-    # @teaples = Teaple.all
+    @teaples = Teaple.all
   end
 
-  # def new
-  # end
+  def new
+    @teaple = Teaple.new
+  end
+
+  def show
+    @teaple = Teaple.find(params[:id])
+  end
 
   def create
     @teaple = Teaple.create(teaple_params)
@@ -14,7 +19,7 @@ class TeaplesController < ApplicationController
   end
 
   def teaple_params
-    params.require(:teaple).permit(:name)
+    params.require(:teaple).permit(:name, :bio, :location)
   end
 
 

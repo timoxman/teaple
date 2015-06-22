@@ -28,7 +28,6 @@ feature 'teaple' do
       add_teaple("Martha")
       expect(page).to have_link 'Arrange meeting'
     end
-
     scenario 'user can leave a message on teaple page' do
       add_teaple
       click_link "Arrange meeting"
@@ -36,9 +35,16 @@ feature 'teaple' do
       click_button 'Arrange Meeting'
       expect(page).to have_content("Please meet me")
     end
-
   end
 
-
+  context 'viewing teaple' do
+    let!(:betty){Teaple.create(name:"Betty")}
+    scenario 'lets a volunteer view a teaple profile' do
+      visit '/'
+      click_link 'Betty'
+      expect(page).to have_content 'Betty'
+      expect(current_path).to eq "/teaples/#{betty.id}"
+    end
+  end
 
 end
