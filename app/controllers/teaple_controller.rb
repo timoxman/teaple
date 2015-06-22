@@ -1,2 +1,0 @@
-class TeapleController < ApplicationController
-end
