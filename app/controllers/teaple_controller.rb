@@ -1,0 +1,2 @@
+class TeapleController < ApplicationController
+end
