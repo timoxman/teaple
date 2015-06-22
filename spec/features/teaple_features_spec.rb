@@ -3,9 +3,9 @@ require 'rails_helper'
 feature 'teaple' do
   context '' do
     scenario '' do
-      # visit '/restaurants'
-      # expect(page).to have_content 'No restaurants yet'
-      # expect(page).to have_link 'Add a restaurant'
+      visit '/teaples'
+      expect(page).to have_content 'No teaple profile yet'
+      expect(page).to have_link 'Add your profile'
     end
   end
 end

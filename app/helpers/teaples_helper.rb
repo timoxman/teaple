@@ -1,0 +1,2 @@
+module TeaplesHelper
+end
