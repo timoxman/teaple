@@ -15,14 +15,19 @@
  */
 
  #wrapper {
-   width:600px;
+   width:800px;
    margin:0 auto;
    background-color:#f8f8f8;
    border-radius:10px;
    box-shadow: 1px 1px 3px rgba(0,0,0,.3);
    padding: 1em;
+   background-image:url("http://www.royalblind.org/sites/www.royalblind.org/files/Care-For-Older-People/Braeside_House_115.jpg");
+
+
 
  }
+
+
 
  h1 {
    text-align: center;
@@ -35,3 +40,15 @@
    text-shadow: 1px 1px 3px rgba(0,0,0,.2);
    color:#614343;
  }
+
+
+.new_user {
+   border:1px solid #fff;
+   padding:1.5em;
+   box-shadow: 1px 1px 3px rgba(0,0,0,.3);
+   width: 50%;
+   margin: 0 auto;
+   border-radius: 10px;
+   margin-bottom: 3em;
+}
+
