@@ -22,19 +22,49 @@ i’d like to see a list of available teaples
 ```
 As an old person (or ‘teaple’)
 so that I can get visits
-I want to be able to put my details on the site
+I want to be able to create my profile on the site
 ```
 
 ```
 As a would-be visitor
 So that I can visit a teaple
-I want to initiate a conversation with a selected teaple
+I want to send a request to a profile owner
 ```
 
 ```
 As a user of the site
 So that I can use the application
-I want to sign up and log in as a teaple or volunteer
+I want to sign up and log in
+```
+
+```
+As a user of the site
+So that no-one can change my profile
+I want to be able to restrict editing to just me
+```
+
+```
+As a security-conscious user of the site
+So that I can keep my details private
+I would like only me to see my own messages
+```
+
+```
+As a user of the site
+So that i can stop using the service
+I would like to be able to delete my own profile
+```
+
+```
+As a user of the site
+So that I can find profiles near me
+I would like to see accurate locations on user profiles
+```
+
+```
+As a user of the site
+So people know when I'm available
+I would like to be able to register my availability
 ```
 
 ## Favourite Code Snippet
