@@ -5,21 +5,21 @@ include Helpers
 
 feature 'teaple' do
   context 'new user can see a link to add profile' do
-    scenario 'user visits the main page' do
+    scenario 'user visits the main page (t01)' do
       visit '/'
       expect(page).to have_link 'Add your profile'
     end
   end
 
   context 'have not been added' do
-    scenario 'display a message' do
+    scenario 'display a message (t02)' do
         visit '/teaples'
         expect(page).to have_content 'No teaples added yet'
     end
   end
 
   context 'have been added' do
-    scenario 'display some teaples' do
+    scenario 'display some teaples (t03)' do
       Teaple.create(name: 'Elsie')
       visit '/teaples'
       expect(page).to have_content 'Elsie'
@@ -28,7 +28,7 @@ feature 'teaple' do
   end
 
   context 'user adds new profile' do
-    scenario 'user clicks link and adds details' do
+    scenario 'user clicks link and adds details (t04)' do
       sign_up(email="test@test.com")
       visit '/'
       click_link "Add your profile"
@@ -43,13 +43,13 @@ feature 'teaple' do
   end
 
   context 'once a teaple has been created you can arrange a meeting with the teaple' do
-    scenario 'user adds a teaple and can see a link to arrange a meeting' do
+    scenario 'user adds a teaple and can see a link to arrange a meeting (t05)' do
       sign_up(email="test@test.com")
       add_teaple("Martha")
       expect(page).to have_link 'Arrange meeting'
     end
 
-    scenario 'user can leave a message on teaple page' do
+    scenario 'user can leave a message on teaple page (t06)' do
       sign_up(email="test@test.com")
       add_teaple
       visit '/'
@@ -62,18 +62,19 @@ feature 'teaple' do
 
   context 'viewing teaple' do
     #let!(:betty){Teaple.create(name:"Betty", postcode: "LU7 OSR")}
-    scenario 'lets a volunteer view a teaple profile' do
+    scenario 'lets a volunteer view a teaple profile (t07)' do
       sign_up(email="test@test.com")
       add_teaple('Betty')
       visit '/'
       click_link 'Betty'
+      @betty = Teaple.find_by(name: "Betty")
       expect(page).to have_content 'Betty'
-      expect(current_path).to eq "/teaples/#{betty.id}"
+      expect(current_path).to eq "/teaples/#{@betty.id}"
     end
   end
 
   context 'messages' do
-    scenario 'hide private messages from other users' do
+    scenario 'hide private messages from other users (t08)' do
       sign_up(email="test@test.com")
       add_teaple("Betty123")
       click_link('Arrange meeting')
@@ -88,10 +89,13 @@ feature 'teaple' do
     end
   end
 
-  scenario 'location shown' do
+  scenario 'location of a teaple can be displayed (t09)' do
     Teaple.stub(:geocoded_by).and_return([51.8452049, -0.6655192])
+    sign_up(email="test@test.com")
+    add_teaple("Betty")
     visit '/'
     click_link 'Betty'
+    #content on page has been removed, you are never going to find this!!
     expect(page).to have_content("51.8452049, -0.6655192")
   end
 
