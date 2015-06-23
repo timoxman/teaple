@@ -33,12 +33,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'geocoder'
+gem 'underscore-rails'
 
+gem 'gmaps4rails'
 
 group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'shoulda'
+  gem 'mocha'
 end
 
 #group :development do
