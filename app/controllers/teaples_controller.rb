@@ -2,6 +2,13 @@ class TeaplesController < ApplicationController
 
   def index
     @teaples = Teaple.all
+
+    # i = 1
+    # byebug
+    # @teaples.each do |teaple|
+    #   @messagenums[i] = Messages.count.where(teaple_id: teaple.id)
+    #   i++
+    # end
   end
 
   def new
