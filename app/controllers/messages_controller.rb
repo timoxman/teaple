@@ -18,6 +18,12 @@ class MessagesController < ApplicationController
 
   def index
     @teaple = Teaple.find(params[:teaple_id])
+    if current_user.id == @teaple.user_id
+      @messages = Message.where(teaple_id: @teaple.id).find_each
+    else
+      flash[:notice] = "You must be logged in as the user who created the teaple to see their messages"
+      redirect_to '/'
+    end
   end
 
 end
