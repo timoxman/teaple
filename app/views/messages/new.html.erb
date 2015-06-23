@@ -1,0 +1,7 @@
+Please fill in the form below letting <% "#{ @teaple.name }" %> you'd like to meet:
+<%= form_for [@teaple, @message] do |f| %>
+  <%= f.label :messageText %>
+  <%= f.text_field :messageText %>
+  <%= f.submit "Arrange Meeting" %>
+<% end %>
+

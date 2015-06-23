@@ -1,0 +1,9 @@
+Here are <%= "#{ @teaple.name }'s" %> messages:
+
+<ul>
+  <% Message.where(teaple_id: @teaple.id).find_each do |message|%>
+    <li>
+    <%= "#{message.messageText}" %>
+    </li>
+  <%  end %>
+</ul>

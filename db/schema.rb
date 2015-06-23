@@ -11,15 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150622143052) do
+ActiveRecord::Schema.define(version: 20150623103938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "messages", force: :cascade do |t|
+    t.text     "messageText"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "teaple_id"
+  end
+
+  add_index "messages", ["teaple_id"], name: "index_messages_on_teaple_id", using: :btree
 
   create_table "teaples", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text     "bio"
+    t.text     "location"
+    t.string   "postcode"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,4 +60,5 @@ ActiveRecord::Schema.define(version: 20150622143052) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "messages", "teaples"
 end
