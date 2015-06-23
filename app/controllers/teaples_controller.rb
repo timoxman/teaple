@@ -23,7 +23,7 @@ class TeaplesController < ApplicationController
   end
 
   def teaple_params
-    params.require(:teaple).permit(:name, :bio, :location)
+    params.require(:teaple).permit(:name, :bio, :location, :postcode)
   end
 
 
