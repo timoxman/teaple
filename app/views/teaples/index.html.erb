@@ -1,0 +1,23 @@
+<section id="main">
+
+<% if @teaples.any? %>
+  <ul>
+    <% @teaples.each do |teaple|%>
+      <li><%= link_to teaple.name, teaple_path(teaple) %> <%= link_to "Arrange meeting", new_teaple_message_path(teaple) %> </li>
+    <%  end %>
+  </ul>
+<% else %>
+  <h2>No teaples added yet</h2>
+<% end %>
+
+<%= link_to "Add your profile", new_teaple_path %>
+
+
+<% if user_signed_in? %>
+  <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign in", new_user_session_path %>
+  <%= link_to "Sign up", new_user_registration_path %>
+<% end %>
+
+</section>

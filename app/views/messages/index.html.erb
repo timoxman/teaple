@@ -1,0 +1,11 @@
+Here are <%= "#{ @teaple.name }'s" %> messages:
+
+<ul>
+  <% if @messages %>
+    <% @messages.each do |message|%>
+      <li>
+      <%= "#{message.messageText}" %>
+      </li>
+    <%  end %>
+  <%  end %>
+</ul>
