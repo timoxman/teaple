@@ -80,12 +80,15 @@ GEM
     geocoder (1.2.9)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
-<<<<<<< HEAD
+
     http-cookie (1.0.2)
       domain_name (~> 0.5)
-=======
+
     gmaps4rails (2.1.2)
->>>>>>> userstory-8
+
+
+
+
     i18n (0.7.0)
     jbuilder (2.3.0)
       activesupport (>= 3.0.0, < 5)
@@ -206,13 +209,14 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-<<<<<<< HEAD
+
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.6)
-=======
+
     underscore-rails (1.8.3)
->>>>>>> userstory-8
+
+
     warden (1.2.3)
       rack (>= 1.0)
     web-console (2.1.3)

@@ -78,8 +78,6 @@ feature 'teaple' do
       expect(current_path).to eq "/teaples/#{betty.id}"
     end
 
-<<<<<<< HEAD
-
   context 'messages' do
     scenario 'hide private messages from other users' do
       sign_up(email="test@test.com")
@@ -98,9 +96,6 @@ feature 'teaple' do
     end
   end
 
-
-
-=======
     scenario 'location shown' do
       Teaple.stub(:geocoded_by).and_return([51.8452049, -0.6655192])
       visit '/'
@@ -109,5 +104,4 @@ feature 'teaple' do
     end
   end
 end
->>>>>>> userstory-8
-end
+
