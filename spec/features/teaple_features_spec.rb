@@ -43,7 +43,6 @@ feature 'teaple' do
   end
 
   context 'once a teaple has been created you can arrange a meeting with the teaple' do
-
     scenario 'user adds a teaple and can see a link to arrange a meeting' do
       sign_up(email="test@test.com")
       add_teaple("Martha")
@@ -59,14 +58,13 @@ feature 'teaple' do
       click_button 'Arrange Meeting'
       expect(page).to have_content("Please meet me")
     end
-
   end
 
   context 'viewing teaple' do
-
-    let!(:betty){Teaple.create(name:"Betty", postcode: "LU7 OSR")}
-
+    #let!(:betty){Teaple.create(name:"Betty", postcode: "LU7 OSR")}
     scenario 'lets a volunteer view a teaple profile' do
+      sign_up(email="test@test.com")
+      add_teaple('Betty')
       visit '/'
       click_link 'Betty'
       expect(page).to have_content 'Betty'
