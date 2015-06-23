@@ -13,8 +13,12 @@ class TeaplesController < ApplicationController
   end
 
   def create
-    @teaple = Teaple.create(teaple_params)
-    flash[:notice] = "Thanks for signing up, #{@teaple.name}!"
+    if current_user
+      @teaple = Teaple.create(teaple_params.merge({user_id:current_user.id}))
+      flash[:notice] = "Thanks for signing up, #{@teaple.name}!"
+    else
+      flash[:notice] = "Only logged in users can sign up Teaple"
+    end
     redirect_to '/'
   end
 
