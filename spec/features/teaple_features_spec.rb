@@ -72,10 +72,10 @@ feature 'teaple' do
     end
 
     scenario 'location shown' do
-      Teaple.stub(:geocode).and_return([51.845388, -0.665573])
+      Teaple.stub(:geocoded_by).and_return([51.8452049, -0.6655192])
       visit '/'
       click_link 'Betty'
-      expect(page).to have_content("51.845388, -0.665573")
+      expect(page).to have_content("51.8452049, -0.6655192")
     end
   end
 end

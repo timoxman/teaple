@@ -13,13 +13,14 @@ class TeaplesController < ApplicationController
   end
 
   def create
+    byebug
     @teaple = Teaple.create(teaple_params)
     flash[:notice] = "Thanks for signing up, #{@teaple.name}!"
     redirect_to '/'
   end
 
   def teaple_params
-    params.require(:teaple).permit(:name, :bio, :location)
+    params.require(:teaple).permit(:name, :bio, :location, :postcode)
   end
 
 
