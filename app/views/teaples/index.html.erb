@@ -1,16 +1,19 @@
 <section id="main">
 
 <% if @teaples.any? %>
+Here is the list of teaples you can arrange to meet:
   <ul>
     <% @teaples.each do |teaple|%>
-      <li><%= link_to teaple.name, teaple_path(teaple) %> <%= link_to "Arrange meeting", new_teaple_message_path(teaple) %> </li>
+      <li><%= link_to teaple.name, teaple_path(teaple) %>
+          <%=link_to teaple.No_Of_Messages, teaple_messages_path(teaple) %>
+          <%= link_to "Arrange meeting", new_teaple_message_path(teaple) %> </li>
     <%  end %>
   </ul>
 <% else %>
   <h2>No teaples added yet</h2>
 <% end %>
 
-<%= link_to "Add your profile", new_teaple_path %>
+<%= link_to "Add your profile", new_teaple_path %> <br>
 
 
 <% if user_signed_in? %>

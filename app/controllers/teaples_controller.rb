@@ -2,13 +2,6 @@ class TeaplesController < ApplicationController
 
   def index
     @teaples = Teaple.all
-
-    # i = 1
-    # byebug
-    # @teaples.each do |teaple|
-    #   @messagenums[i] = Messages.count.where(teaple_id: teaple.id)
-    #   i++
-    # end
   end
 
   def new
@@ -17,6 +10,7 @@ class TeaplesController < ApplicationController
 
   def show
     @teaple = Teaple.find(params[:id])
+    @creator = User.find(@teaple.user_id).email
   end
 
   def create
@@ -32,7 +26,5 @@ class TeaplesController < ApplicationController
   def teaple_params
     params.require(:teaple).permit(:name, :bio, :location, :postcode)
   end
-
-
 
 end
