@@ -34,6 +34,9 @@ feature 'teaple' do
       fill_in "Message", with: "Please meet me"
       click_button 'Arrange Meeting'
       expect(page).to have_content("Please meet me")
+      #addition
+      visit 'teaples/1/messages/'
+      expect(page).to have_content("Please meet me")
     end
   end
 
