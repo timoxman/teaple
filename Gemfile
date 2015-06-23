@@ -35,6 +35,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'geocoder'
 
+gem 'gmaps4rails'
+
 group :test do
   gem 'rspec-rails'
   gem 'capybara'

@@ -1,11 +1,21 @@
+
+
 <section id="profile">
   <h3><span class="prof">Name:</span> <%= @teaple.name %></h3>
   <p><span class="prof">Bio:</span> <%= @teaple.bio %></p>
   <p><span class="prof">Location:</span> <%= @teaple.location %></p>
   <p><span class="prof">Long/Lat:</span> <%= "#{@teaple.latitude}, #{@teaple.longitude}" %></p>
 
+  <div style='width: 800px;'>
+  <div id="geolocation" style='width: 800px; height: 400px;'></div>
+  </div>
+
 
   <br/>
   <p><a class="button" href="/teaples">Back to home page</a></p>
 
 </section>
+
+<script>
+  <%= render partial: 'teaples/js/gmaps', formats: [:js] %>
+</script>

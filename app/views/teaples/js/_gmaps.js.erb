@@ -1,0 +1,15 @@
+var handler = Gmaps.build('Google');
+handler.buildMap({ internal: {id: 'geolocation'} }, function(){
+  if(navigator.geolocation)
+    navigator.geolocation.getCurrentPosition(displayOnMap);
+});
+
+  {
+  var marker = handler.addMarker({
+
+
+    lat: <%= @teaple.latitude %>,
+    lng: <%= @teaple.longitude %>,
+  });
+  handler.map.centerOn(marker);
+};
