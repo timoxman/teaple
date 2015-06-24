@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
+#password and user functionaility
 gem 'devise'
+#testing coverage
 gem 'coveralls', require: false
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -34,7 +36,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#allows map to ve added
 gem 'geocoder'
+#allows us to add images
+gem 'paperclip'
+#Allows pagination
+gem 'will_paginate', '~> 3.0.6'
+
 gem 'underscore-rails'
 
 gem 'gmaps4rails'

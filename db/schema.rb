@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623182003) do
+ActiveRecord::Schema.define(version: 20150624074312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,14 +27,18 @@ ActiveRecord::Schema.define(version: 20150623182003) do
 
   create_table "teaples", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.text     "bio"
     t.text     "location"
     t.string   "postcode"
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "user_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "teaples", ["user_id"], name: "index_teaples_on_user_id", using: :btree

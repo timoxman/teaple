@@ -10,10 +10,11 @@ class MessagesController < ApplicationController
     @teaple = Teaple.find(params[:teaple_id])
     @teaple.messages.create(message_params)
     flash[:notice] = "Thanks for sending a message to #{@teaple.name}!"
-    if current_user.id == @teaple.user_id
+    if !current_user
+      redirect_to teaples_path()
+    elsif current_user.id == @teaple.user_id
       redirect_to teaple_messages_path(@teaple)
     else
-      flash[:notice] = "Your message has been sent"
       redirect_to teaples_path()
     end
   end

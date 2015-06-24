@@ -9,6 +9,7 @@ Here is the list of teaples you can arrange to meet:
           <%= link_to "Arrange meeting", new_teaple_message_path(teaple) %> </li>
     <%  end %>
   </ul>
+  <%= will_paginate @teaples %>
 <% else %>
   <h2>No teaples added yet</h2>
 <% end %>

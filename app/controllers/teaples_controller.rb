@@ -1,7 +1,8 @@
 class TeaplesController < ApplicationController
 
   def index
-    @teaples = Teaple.all
+#    @teaples = Teaple.all
+    @teaples = Teaple.paginate(:page => params[:page], :per_page =>5 )
   end
 
   def new
@@ -24,7 +25,7 @@ class TeaplesController < ApplicationController
   end
 
   def teaple_params
-    params.require(:teaple).permit(:name, :bio, :location, :postcode)
+    params.require(:teaple).permit(:name, :bio, :location, :postcode, :image)
   end
 
 end
